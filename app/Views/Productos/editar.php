@@ -5,7 +5,7 @@
         Nuevo producto
     </div>
     <div class="card-body">
-        <form action="actualizar" method="POST" class="form-control">
+        <form action="<?php echo base_url()?>productos/actualizar" method="POST" class="form-control">
             <div class="row">
                 <input type="text" class="form-control" name="id" id="id" value="<?=$valor['id']?>">
                 <div class="col-12">

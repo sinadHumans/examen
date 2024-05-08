@@ -78,8 +78,21 @@ class Productos extends Controller
         /* funcion acualizar */
         public function actualizar(){
             $productos = new Producto();
+
+            $validacion = $this->validate(
+                [
+                    'nombre'=>'required',
+                    'precio'=>'required',
+                ]
+            );
+            if(!$validacion){
+                $datos['cabecera'] = view('template/header');
+                $datos['footer'] = view('template/footer');
+                $datos['aviso'] = "4";
+                return view('productos/editar',$datos);
+            };
             
-            $request = \Config\Services::request();
+            
             $datos=[
                 'nombre' =>  $this->request->getVar('nombre'),
                 'descripcion' => $this->request->getVar('descripcion'),
