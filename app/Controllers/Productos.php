@@ -24,6 +24,7 @@ class Productos extends Controller
         public function crear(){
             $datos['cabecera'] = view('template/header');
             $datos['footer'] = view('template/footer');
+            $datos['aviso'] = "0";
             return view('productos/crear',$datos);
         }
 
@@ -33,6 +34,19 @@ class Productos extends Controller
          
             $productos = new Producto();
             
+            $validacion = $this->validate(
+                [
+                    'nombre'=>'required',
+                    'precio'=>'required',
+                ]
+            );
+            if(!$validacion){
+                $datos['cabecera'] = view('template/header');
+                $datos['footer'] = view('template/footer');
+                $datos['aviso'] = "4";
+                return view('productos/crear',$datos);
+            };
+
             
             $datos=[
                 'nombre' => $this->request->getVar('nombre'),

@@ -1,4 +1,7 @@
 <?=$cabecera?>
+<?php if($aviso ==4){?>
+    <div class="alert alert-danger" role="alert"> Recuerda que el nombre y el precio es obligatorio </div>  
+  <?php }?>
 <div class="container">
     <div class="card">
     <div class="card-header">
