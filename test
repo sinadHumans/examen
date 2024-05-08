@@ -1,0 +1,26 @@
+/*
+MySQL Backup
+Source Server Version: 5.5.5
+Source Database: tienda
+Date: 08/05/2024 13:06:37
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+--  Table structure for `productos`
+-- ----------------------------
+DROP TABLE IF EXISTS `productos`;
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) DEFAULT '',
+  `descripcion` longtext DEFAULT NULL,
+  `precio` decimal(10,0) DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- ----------------------------
+--  Records 
+-- ----------------------------
+INSERT INTO `productos` VALUES ('1','producto','descripcion','3','1'), ('2','producto2','descripcion 2','4','2'), ('32','df','df','34','34');
